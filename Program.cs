@@ -23,9 +23,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins(allowOrigins) 
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
+            policy.WithOrigins(
+                "http://localhost:5173", // Local React App
+                "https://welsh-web-app-ghf5cwgze2dugdg6.canadacentral-01.azurewebsites.net" // Azure React App
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
         });
 });
 
