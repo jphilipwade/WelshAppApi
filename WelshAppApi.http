@@ -1,0 +1,6 @@
+@WelshAppApi_HostAddress = http://localhost:5171
+
+GET {{WelshAppApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
