@@ -8,7 +8,6 @@ namespace WelshAppApi.Controllers
     public class HelloController : ControllerBase
     {
         [HttpGet]
-        [Authorize]
         public IActionResult GetHelloMessage()
         {
             return Ok("Hello world");
