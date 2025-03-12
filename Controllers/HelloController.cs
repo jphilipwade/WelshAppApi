@@ -11,7 +11,7 @@ namespace WelshAppApi.Controllers
         [Authorize]
         public IActionResult GetHelloMessage()
         {
-            return Ok("Hello world");
+            return Ok("Hello Welshish!");
         }
     }
 }
