@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add authentication
 var auth0Domain = builder.Configuration["Auth0:Domain"];
 var auth0Audience = builder.Configuration["Auth0:Audience"];
-string reactAppUrl = builder.Configuration["ReactAppUrl"];
+string allowOrigins = builder.Configuration["AllowOrigins"];
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -23,7 +23,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins(reactAppUrl) // React app URL
+            policy.WithOrigins(allowOrigins) 
                   .AllowAnyMethod()
                   .AllowAnyHeader();
         });
